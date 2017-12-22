@@ -1,0 +1,11 @@
+#SQL SERVER Container
+sqlserver:
+ image: sqlserver-agent
+ container_name: sql
+ hostname: srv-sql
+ ports:
+   - "1433:1433"
+ env_file:
+   - ./sql.env
+ volumes:
+   - /opt/sqlserver/backup:/var/opt/mssql/backup
